@@ -2,19 +2,19 @@
 /* Fonts */
 @font-face {
   font-family: 'Blippo';
-  src: url('/em/assets/font/blippo.ttf') format('truetype');
+  src: url('./assets/font/blippo.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'Helvetica';
-  src: url('/assets/font/Helvetica.ttf') format('truetype');
+  src: url('./assets/font/Helvetica.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'Helvetica';
-  src: url('/assets/font/Helvetica-Oblique.ttf') format('truetype');
+  src: url('./assets/font/Helvetica-Oblique.ttf') format('truetype');
   font-weight: normal;
   font-style:oblique;
 }
@@ -778,7 +778,7 @@ text-align: justify;
 }
 
 .hero {
-  background-image: url('/assets/img/bgstripes.png') !important;
+  background-image: url('./assets/img/bgstripes.png') !important;
   background-size: contain !important;
   background-repeat:repeat-y!important;
   min-height: 100vh; /* altezza intera finestra */
