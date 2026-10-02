@@ -778,7 +778,7 @@ text-align: justify;
 }
 
 .hero {
-  background-image: url('./assets/img/bgstripes.png') !important;
+  background-image: url('../assets/img/bgstripes.png') !important;
   background-size: contain !important;
   background-repeat:repeat-y!important;
   min-height: 100vh; /* altezza intera finestra */
@@ -836,7 +836,7 @@ text-align: justify;
 # About Section
 --------------------------------------------------------------*/
 .about{
-  background-image: url('./assets/img/bgstripes.png') !important;
+  background-image: url('../assets/img/bgstripes.png') !important;
   background-size: contain !important;
   background-repeat:repeat-y!important;
 }
@@ -946,7 +946,7 @@ margin-top: 100px;
 
 
 .services{
-  background-image: url('./assets/img/bgstripes.png') !important;
+  background-image: url('../assets/img/bgstripes.png') !important;
   background-size: contain !important;
   background-repeat:repeat-y!important;
   overflow: visible;
@@ -1809,7 +1809,7 @@ color: black;
 
 
  .news  {
-  background-image: url('./assets/img/bgstripes.png') !important;
+  background-image: url('../assets/img/bgstripes.png') !important;
   background-size: contain !important;
   background-repeat:repeat-y!important;
  }
