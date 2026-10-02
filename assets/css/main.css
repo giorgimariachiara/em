@@ -816,6 +816,10 @@ text-align: justify;
 .typed{
   background-color: #fff;
   border-radius: 20%;
+  padding: 50px;
+  margin: -20px;
+
+
 }
 
 @media (max-width: 768px) {
@@ -832,7 +836,7 @@ text-align: justify;
 # About Section
 --------------------------------------------------------------*/
 .about{
-  background-image: url('/assets/img/bgstripes.png') !important;
+  background-image: url('./assets/img/bgstripes.png') !important;
   background-size: contain !important;
   background-repeat:repeat-y!important;
 }
