@@ -1,4 +1,3 @@
-
 /* Fonts */
 @font-face {
   font-family: 'Blippo';
@@ -31,7 +30,7 @@ body {
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: BLACK; /* Default color used for the majority of the text content across the entire website */
   --heading-color: rgb(0, 140, 149); /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #B65F4A ; /* #9f1f33 Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --accent-color: #9f1f33 ; /* #9f1f33 Accent color B65F4A that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
@@ -39,7 +38,7 @@ body {
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
   --nav-color: #ffffff;  /* The default color of the main navmenu links */
-  --nav-hover-color: #ffffff; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-hover-color: #9f1f33; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
   --nav-dropdown-color: #212529; /* Used for navigation links of the dropdown items in the navigation menu. */
@@ -728,7 +727,7 @@ section,
   font-family: "Blippo", sans-serif;
   text-align: justify !important;
   font-size: 2rem !important;
-  color: #B65F4A;
+  color: #9f1f33;
 
 }
 
@@ -805,6 +804,8 @@ background-image: url('../img/bgstripes.png');
   font-weight: 600;
   color: black;
   margin-top: 50px;
+    font-family: "Helvetica", sans-serif!important;
+
 
 
 }
@@ -841,6 +842,7 @@ background-image: url('../img/bgstripes.png');
 background-image: url('../img/bgstripes.png');
   background-size: contain !important;
   background-repeat:repeat-y!important;
+
 }
 .about .container {
   background-color: var(--surface-color);
@@ -851,7 +853,6 @@ background-image: url('../img/bgstripes.png');
 
 .about .skills-content h5 {
   font-size: 18px;
-  font-weight: 700;
   margin: 30px 0 15px 0;
 }
 
@@ -860,7 +861,6 @@ margin-top: 100px;
   font-size: 40px;
   padding-bottom: 10px;
   margin-bottom: 30px;
-  font-weight: 700;
 
 }
 
@@ -877,7 +877,9 @@ margin-top: 100px;
 
 .about .about-me p {
   font-size: 22px;
-}
+    font-family: "Helvetica", sans-serif!important;
+
+} 
 
 .about iframe{
   margin-top: 100px;
@@ -1914,4 +1916,174 @@ background-image: url('../img/bgstripes.png');
   border: none;
   cursor: pointer;
   z-index: 10000;
+}
+
+
+.gallery-section {
+  padding: 80px 0;
+}
+
+.gallery-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.gallery-title h1 {
+  font-family: "Blippo", sans-serif;
+  font-size: 50px;
+}
+
+.gallery-title h2 {
+  font-size: 22px;
+  margin-top: 10px;
+}
+
+.gallery-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  margin-bottom: 40px;
+}
+
+.gallery-filters button {
+  border: 0;
+  background: transparent;
+
+  font-family: "Blippo", sans-serif;
+  font-size: 16px;
+
+  cursor: pointer;
+}
+
+.gallery-filters button:hover {
+  color: rgb(0, 140, 149);
+}
+
+.gallery-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 15px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 300px;
+
+  object-fit: cover;
+
+  display: block;
+
+  transition: 0.3s;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.02);
+}
+
+@media (max-width: 768px) {
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+/* Badge foto nelle card eventi */
+.photo-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  background-color: white;
+  color: rgb(0, 140, 149);
+
+  padding: 6px 10px;
+  border-radius: 20px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  z-index: 5;
+}
+
+.photo-badge i {
+  font-size: 20px;
+}
+
+
+/* BADGE FOTO */
+
+.photo-badge {
+  position: absolute;
+
+  top: 15px;
+  right: 15px;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 5px;
+
+  background-color: white;
+  color: rgb(0, 140, 149);
+
+  padding: 6px 10px;
+
+  border-radius: 20px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  z-index: 5;
+}
+
+.photo-badge i {
+  font-size: 14px;
+}
+
+/* INSTAGRAM MODAL */
+
+.instagram-modal-dialog {
+  width: 90%;
+  max-width: 750px;
+  margin: 20px auto;
+}
+
+#birthdayInstagram .modal-content {
+  border: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  max-height: 95vh;
+}
+
+#birthdayInstagram .modal-header {
+  padding: 14px 20px;
+}
+
+#birthdayInstagram .modal-body {
+  padding: 15px;
+  max-height: calc(95vh - 65px);
+  overflow-y: auto;
+}
+
+.instagram-embed-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.instagram-embed-container .instagram-media {
+  width: 100% !important;
+  max-width: 650px !important;
+  min-width: 0 !important;
+  margin: 0 auto !important;
 }
