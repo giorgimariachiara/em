@@ -2099,3 +2099,629 @@ background-image: url('../img/bgstripes.png');
   min-width: 0 !important;
   margin: 0 auto !important;
 }
+
+
+
+/* ==========================================
+   MAPPA MÖLKKY ITALIA
+========================================== */
+
+
+.molkky-map-section {
+  background-image: url('../img/bgstripes.png');
+  background-size: contain;
+  background-repeat: repeat-y;
+  min-height: 100vh;
+  
+}
+
+.molkky-map-section h2{
+width: 200px;
+}
+.map-page-container {
+  max-width: 1250px;
+}
+
+
+/* ==========================================
+   INTRO
+========================================== */
+
+.map-intro {
+  max-width: 760px;
+
+  margin: 20px auto 50px;
+background-color: white;
+  text-align: center;
+}
+
+
+.map-intro h3 {
+  margin-bottom: 18px;
+
+  color: #9f1f33;
+
+  font-size: 38px;
+}
+
+
+.map-intro p {
+  margin-bottom: 8px;
+
+  font-family: 'Helvetica', sans-serif;
+
+  font-size: 19px;
+  line-height: 1.5;
+
+  color: black;
+}
+
+
+
+/* ==========================================
+   MAPPA
+========================================== */
+
+#molkky-map {
+  width: 100%;
+  height: 620px;
+
+  margin-bottom: 75px;
+
+  border: 8px solid white;
+  border-radius: 25px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 8px 35px rgba(0, 0, 0, 0.15);
+
+  z-index: 1;
+}
+
+
+
+/* ==========================================
+   MARKER
+========================================== */
+
+.molkky-marker {
+  background: transparent;
+  border: 0;
+}
+
+
+.molkky-marker-dot {
+  width: 34px;
+  height: 34px;
+
+  background: rgb(0, 140, 149);
+
+  border: 6px solid white;
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 3px 12px rgba(0, 0, 0, 0.35);
+
+  transition: transform 0.2s ease;
+}
+
+
+.molkky-marker-dot:hover {
+  transform: scale(1.15);
+}
+
+
+
+/* ==========================================
+   LEAFLET POPUP
+========================================== */
+
+.leaflet-popup-content-wrapper {
+  border-radius: 16px;
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.18);
+}
+
+
+.leaflet-popup-content {
+  margin: 18px;
+
+  min-width: 190px;
+}
+
+
+.molkky-popup {
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+
+  font-family: 'Helvetica', sans-serif;
+}
+
+
+.molkky-popup strong {
+  margin-bottom: 4px;
+
+  color: #9f1f33;
+
+  font-family: 'Blippo', sans-serif;
+
+  font-size: 19px;
+  line-height: 1.2;
+}
+
+
+.popup-place,
+.popup-when {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 6px;
+
+  color: black;
+
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+
+.popup-place i,
+.popup-when i {
+  margin-top: 2px;
+
+  color: rgb(0, 140, 149);
+}
+
+
+
+/* ==========================================
+   LINK POPUP
+========================================== */
+
+.popup-links {
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 5px;
+
+  margin-top: 6px;
+}
+
+
+.popup-links a {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  color: rgb(0, 140, 149) !important;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+.popup-links a:hover {
+  color: #9f1f33 !important;
+}
+
+
+
+/* ==========================================
+   TITOLO REALTÀ
+========================================== */
+
+.map-subtitle {
+  margin-bottom: 30px;
+
+  text-align: center;
+}
+
+
+.map-subtitle span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: rgb(0, 140, 149);
+
+  font-size: 14px;
+
+  letter-spacing: 1px;
+}
+
+
+.map-subtitle h2 {
+  margin: 0;
+
+  color: #9f1f33;
+
+  font-size: 38px;
+}
+
+
+
+/* ==========================================
+   GRIGLIA REALTÀ
+========================================== */
+
+.map-info-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 25px;
+
+  margin-bottom: 70px;
+}
+
+
+
+/* ==========================================
+   CARD REALTÀ
+========================================== */
+
+.map-info-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 250px;
+
+  padding: 30px;
+
+  background: white;
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 5px 35px rgba(0, 0, 0, 0.10);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.map-info-card:hover {
+  transform: translateY(-7px);
+
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+
+.map-city {
+  display: inline-block;
+
+  margin-bottom: 25px;
+
+  color: rgb(0, 140, 149);
+
+  font-size: 14px;
+
+  letter-spacing: 0.5px;
+}
+
+
+.map-info-card h3 {
+  margin-bottom: 16px;
+
+  color: #9f1f33;
+
+  font-size: 25px;
+  line-height: 1.2;
+}
+
+
+
+/* ==========================================
+   APPUNTAMENTI
+========================================== */
+
+.map-meeting {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 8px;
+
+  margin: 0 0 8px;
+
+  color: black;
+
+  font-family: 'Helvetica', sans-serif;
+
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+
+.map-meeting i {
+  margin-top: 2px;
+
+  color: rgb(0, 140, 149);
+}
+
+
+
+/* ==========================================
+   LINK CARD
+========================================== */
+
+.map-card-links {
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 8px;
+
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+
+.map-card-links a {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  color: rgb(0, 140, 149) !important;
+
+  font-size: 15px;
+  font-weight: 600;
+}
+
+
+.map-card-links a:hover {
+  color: #9f1f33 !important;
+
+  transform: translateX(3px);
+}
+
+
+
+/* ==========================================
+   LA GIOSTRA
+========================================== */
+
+.map-feature-card {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 50px;
+
+  margin: 20px 0 30px;
+
+  padding: 50px;
+
+  background: #9f1f33;
+
+  border-radius: 25px;
+
+  box-shadow:
+    0 8px 35px rgba(0, 0, 0, 0.13);
+}
+
+
+.map-feature-text {
+  max-width: 700px;
+}
+
+
+.map-feature-small {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: white;
+
+  font-size: 14px;
+
+  letter-spacing: 1px;
+}
+
+
+.map-feature-card h2 {
+  margin: 0 0 15px;
+
+  color: white;
+
+  font-size: 38px;
+  line-height: 1.15;
+}
+
+
+.map-feature-card p {
+  margin: 0;
+
+  color: white;
+
+  font-family: 'Helvetica', sans-serif;
+
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+
+
+/* ==========================================
+   LINK LA GIOSTRA
+========================================== */
+
+.map-feature-links {
+  display: flex;
+  flex-direction: column;
+
+  flex-shrink: 0;
+
+  gap: 10px;
+}
+
+
+.map-feature-links a {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 160px;
+
+  gap: 8px;
+
+  padding: 13px 20px;
+
+  background: white;
+
+  color: #9f1f33 !important;
+
+  border-radius: 30px;
+
+  font-size: 15px;
+
+  transition: 0.3s;
+}
+
+
+.map-feature-links a:hover {
+  transform: translateX(5px);
+
+  color: rgb(0, 140, 149) !important;
+}
+
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 991px) {
+
+  #molkky-map {
+    height: 550px;
+  }
+
+
+  .map-info-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+
+  .map-feature-card {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+
+  .map-feature-links {
+    width: 100%;
+
+    flex-direction: row;
+  }
+
+
+  .map-feature-links a {
+    flex: 1;
+  }
+
+}
+
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 600px) {
+
+  .map-intro {
+    margin-bottom: 35px;
+
+    padding: 0 10px;
+  }
+
+
+  .map-intro h3 {
+    font-size: 30px;
+  }
+
+
+  .map-intro p {
+    font-size: 17px;
+  }
+
+
+  #molkky-map {
+    height: 480px;
+
+    border-width: 5px;
+    border-radius: 18px;
+
+    margin-bottom: 55px;
+  }
+
+
+  .map-subtitle h2 {
+    font-size: 31px;
+  }
+
+
+  .map-info-grid {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+
+  .map-info-card {
+    min-height: 220px;
+
+    padding: 25px;
+  }
+
+
+  .map-feature-card {
+    gap: 30px;
+
+    padding: 30px 25px;
+
+    border-radius: 20px;
+  }
+
+
+  .map-feature-card h2 {
+    font-size: 30px;
+  }
+
+
+  .map-feature-card p {
+    font-size: 16px;
+  }
+
+
+  .map-feature-links {
+    flex-direction: column;
+  }
+
+
+  .map-feature-links a {
+    width: 100%;
+  }
+
+}

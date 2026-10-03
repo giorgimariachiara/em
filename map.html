@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Mappa | L'Emiliana Mölkky</title>
+
+  <meta
+    name="description"
+    content="La mappa delle realtà Mölkky in Italia."
+  >
+
+  <meta
+    name="keywords"
+    content="Mölkky Italia, Mölkky Bologna, Mölkky Ravenna, Mölkky Pesaro, Mölkky Roma, Mölkky Matera"
+  >
+
+
+  <!-- FAVICON -->
+
+  <link href="assets/img/logoum2.png" rel="icon">
+  <link href="assets/img/logoum2.png" rel="apple-touch-icon">
+
+
+  <!-- VENDOR CSS -->
+
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+
+  <!-- LEAFLET -->
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  >
+
+
+  <!-- MAIN CSS -->
+
+  <link href="assets/css/main.css" rel="stylesheet">
+
+</head>
+
+
+<body class="mapHtml">
+
+
+  <!-- ========================================
+       HEADER
+  ========================================= -->
+
+  <header
+    id="header"
+    class="header d-flex align-items-center sticky-top"
+  >
+
+    <div
+      class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between"
+    >
+
+
+      <!-- LOGO -->
+
+      <a
+        href="index.html"
+        class="logo d-flex align-items-center"
+      >
+
+        <img
+          src="assets/img/logoem2.png"
+          alt="L'Emiliana Mölkky"
+        >
+
+      </a>
+
+
+
+      <!-- NAV -->
+
+      <nav id="navmenu" class="navmenu">
+
+        <ul>
+
+          <li>
+            <a href="index.html">
+              Home
+            </a>
+          </li>
+
+          <li>
+            <a href="about.html">
+              About
+            </a>
+          </li>
+
+          <li>
+            <a href="events.html">
+              Eventi
+            </a>
+          </li>
+
+          <li>
+            <a href="news.html">
+              Gazzettino Emiliano
+            </a>
+          </li>
+
+          <li>
+            <a href="map.html" class="active">
+              Mappa
+            </a>
+          </li>
+
+        </ul>
+
+
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+
+      </nav>
+
+
+    </div>
+
+  </header>
+
+
+
+  <!-- ========================================
+       MAIN
+  ========================================= -->
+
+  <main>
+
+
+    <section
+      id="mappa"
+      class="molkky-map-section section"
+    >
+
+
+      <!-- TITOLO -->
+
+      <div
+        class="container section-title"
+        data-aos="fade-up"
+      >
+
+        <h2>
+           IL MÖLKKY IN ITALIA
+         </h2>
+
+      </div>
+
+
+
+      <div class="container map-page-container">
+
+
+        <!-- INTRO -->
+
+        <div
+          class="map-intro"
+          data-aos="fade-up"
+        >
+
+          <p>
+            Gruppi, associazioni e appuntamenti per orientarsi
+            nella scena italiana del Mölkky.
+          </p>
+
+          <p>
+            Clicca sui punti della mappa per scoprire chi gioca
+            nelle varie città.
+          </p>
+
+        </div>
+
+
+
+        <!-- ========================================
+             MAPPA
+        ========================================= -->
+
+        <div
+          id="molkky-map"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        ></div>
+
+
+
+        <!-- ========================================
+             REALTÀ LOCALI
+        ========================================= -->
+
+        <div class="map-subtitle">
+
+          <span>LE REALTÀ</span>
+
+          <h2>
+            Dove si gioca
+          </h2>
+
+        </div>
+
+
+
+        <div class="map-info-grid">
+
+
+          <!-- BOLOGNA -->
+
+          <div
+            class="map-info-card"
+            data-aos="fade-up"
+          >
+
+            <span class="map-city">
+              BOLOGNA
+            </span>
+
+            <h3>
+              L'Emiliana Mölkky
+            </h3>
+
+            <div class="map-card-links">
+
+              <a
+                href="https://www.instagram.com/lemiliana_molkky/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+
+                <i class="bi bi-instagram"></i>
+
+                Instagram
+
+              </a>
+
+              <a
+                href="https://www.facebook.com/lemilianamolkky/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+
+                <i class="bi bi-facebook"></i>
+
+                Facebook
+
+              </a>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- RAVENNA -->
+
+          <div
+            class="map-info-card"
+            data-aos="fade-up"
+          >
+
+            <span class="map-city">
+              RAVENNA
+            </span>
+
+            <h3>
+              Balera Mölkky
+            </h3>
+
+            <div class="map-card-links">
+
+              <a
+                href="https://www.instagram.com/baleramolkky/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+
+                <i class="bi bi-instagram"></i>
+
+                Instagram
+
+              </a>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- PESARO -->
+
+          <div
+            class="map-info-card"
+            data-aos="fade-up"
+          >
+
+            <span class="map-city">
+              PESARO
+            </span>
+
+            <h3>
+              Adriatic Mölkky
+            </h3>
+
+            <div class="map-card-links">
+
+              <a
+                href="https://www.instagram.com/adriatic_molkky/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+
+                <i class="bi bi-instagram"></i>
+
+                Instagram
+
+              </a>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- ROMA -->
+
+          <div
+            class="map-info-card"
+            data-aos="fade-up"
+          >
+
+            <span class="map-city">
+              ROMA
+            </span>
+
+            <h3>
+              Bello Molchi
+            </h3>
+
+            <p class="map-meeting">
+
+              <i class="bi bi-geo-alt-fill"></i>
+
+              Piazza Albania
+
+            </p>
+
+            <p class="map-meeting">
+
+              <i class="bi bi-calendar3"></i>
+
+              Lunedì · ore 19:00
+
+            </p>
+
+
+            <div class="map-card-links">
+
+              <a
+                href="https://www.instagram.com/bellomolchi/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+
+                <i class="bi bi-instagram"></i>
+
+                Instagram
+
+              </a>
+
+
+              <a
+                href="https://www.youtube.com/@retemolchi"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+
+                <i class="bi bi-youtube"></i>
+
+                YouTube
+
+              </a>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- ROMA EST -->
+
+          <div
+            class="map-info-card"
+            data-aos="fade-up"
+          >
+
+            <span class="map-city">
+              ROMA EST
+            </span>
+
+            <h3>
+              Dopolavoro Mölkky
+            </h3>
+
+            <p class="map-meeting">
+
+              <i class="bi bi-geo-alt-fill"></i>
+
+              Bocciofila Parco Sangalli
+
+            </p>
+
+            <p class="map-meeting">
+
+              <i class="bi bi-calendar3"></i>
+
+              Mercoledì · ore 19:00
+
+            </p>
+
+
+            <div class="map-card-links">
+
+              <a
+                href="https://www.instagram.com/dopolavoro_molkky/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+
+                <i class="bi bi-instagram"></i>
+
+                Instagram
+
+              </a>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- CITTÀ DI CASTELLO -->
+
+          <div
+            class="map-info-card"
+            data-aos="fade-up"
+          >
+
+            <span class="map-city">
+              CITTÀ DI CASTELLO · PG
+            </span>
+
+            <h3>
+              Tiferno Mölkky Team
+            </h3>
+
+
+            <div class="map-card-links">
+
+              <a
+                href="https://www.instagram.com/tiferno_molkky_team/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+
+                <i class="bi bi-instagram"></i>
+
+                Instagram
+
+              </a>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- MATERA -->
+
+          <div
+            class="map-info-card"
+            data-aos="fade-up"
+          >
+
+            <span class="map-city">
+              MATERA
+            </span>
+
+            <h3>
+              Mölkky e Fuggi
+            </h3>
+
+
+            <div class="map-card-links">
+
+              <a
+                href="https://www.instagram.com/molkkyefuggi/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+
+                <i class="bi bi-instagram"></i>
+
+                Instagram
+
+              </a>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+
+
+        <!-- ========================================
+             LA GIOSTRA
+        ========================================= -->
+
+        <div
+          class="map-feature-card"
+          data-aos="fade-up"
+        >
+
+
+          <div class="map-feature-text">
+
+            <span class="map-feature-small">
+              CAMPIONATO NAZIONALE
+            </span>
+
+            <h2>
+              La Giostra Individuale
+            </h2>
+
+            <p>
+              Campionato nazionale di Mölkky uno contro uno.
+            </p>
+
+          </div>
+
+
+
+          <div class="map-feature-links">
+
+            <a
+              href="https://www.instagram.com/la_giostra_individuale/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+
+              <i class="bi bi-instagram"></i>
+
+              Instagram
+
+            </a>
+
+
+            <a
+              href="https://www.youtube.com/@LaGiostraIndividuale"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+
+              <i class="bi bi-youtube"></i>
+
+              YouTube
+
+            </a>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+
+  <!-- ========================================
+       FOOTER
+  ========================================= -->
+
+  <footer
+    id="footer"
+    class="footer accent-background"
+  >
+
+    <div class="container">
+
+
+      <div class="copyright text-center">
+
+        <img
+          src="assets/img/footerem.png"
+          alt="L'Emiliana Mölkky"
+        >
+
+      </div>
+
+
+      <div class="social-links d-flex justify-content-center">
+
+
+        <a
+          href="https://www.instagram.com/lemiliana_molkky/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+
+          <i class="bi bi-instagram"></i>
+
+        </a>
+
+
+        <a
+          href="https://www.facebook.com/lemilianamolkky/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+
+          <i class="bi bi-facebook"></i>
+
+        </a>
+
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- SCROLL TOP -->
+
+  <a
+    href="#"
+    id="scroll-top"
+    class="scroll-top d-flex align-items-center justify-content-center"
+  >
+
+    <i class="bi bi-arrow-up-short"></i>
+
+  </a>
+
+
+
+  <!-- PRELOADER -->
+
+  <div id="preloader"></div>
+
+
+
+  <!-- ========================================
+       JAVASCRIPT
+  ========================================= -->
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <script src="assets/vendor/aos/aos.js"></script>
+
+
+  <!-- LEAFLET -->
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+
+  <!-- MAIN JS -->
+
+  <script src="assets/js/main.js"></script>
+
+
+
+  <!-- ========================================
+       MAPPA
+  ========================================= -->
+
+  <script>
+
+    const map = L.map(
+      "molkky-map",
+      {
+        scrollWheelZoom: false
+      }
+    ).setView(
+      [42.7, 12.5],
+      6
+    );
+
+
+    L.tileLayer(
+      "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+      {
+        maxZoom: 19,
+        attribution: "&copy; OpenStreetMap"
+      }
+    ).addTo(map);
+
+
+
+    /* MARKER PERSONALIZZATO */
+
+    const molkkyIcon = L.divIcon({
+
+      className: "molkky-marker",
+
+      html: `
+        <div class="molkky-marker-dot"></div>
+      `,
+
+      iconSize: [34, 34],
+
+      iconAnchor: [17, 17],
+
+      popupAnchor: [0, -15]
+
+    });
+
+
+
+    /* ========================================
+       DATI
+    ========================================= */
+
+    const realtaMolkky = [
+
+
+      /* BOLOGNA */
+
+      {
+        nome: "L'Emiliana Mölkky",
+        luogo: "Bologna",
+
+        lat: 44.4949,
+        lng: 11.3426,
+
+        instagram:
+          "https://www.instagram.com/lemiliana_molkky/",
+
+        facebook:
+          "https://www.facebook.com/lemilianamolkky/"
+      },
+
+
+      /* RAVENNA */
+
+      {
+        nome: "Balera Mölkky",
+        luogo: "Ravenna",
+
+        lat: 44.4184,
+        lng: 12.2035,
+
+        instagram:
+          "https://www.instagram.com/baleramolkky/"
+      },
+
+
+      /* PESARO */
+
+      {
+        nome: "Adriatic Mölkky",
+        luogo: "Pesaro",
+
+        lat: 43.9102,
+        lng: 12.9133,
+
+        instagram:
+          "https://www.instagram.com/adriatic_molkky/"
+      },
+
+
+      /* ROMA */
+
+      {
+        nome: "Bello Molchi",
+
+        luogo:
+          "Roma · Piazza Albania",
+
+        quando:
+          "Lunedì · ore 19:00",
+
+        lat: 41.87985,
+        lng: 12.48298,
+
+        instagram:
+          "https://www.instagram.com/bellomolchi/",
+
+        youtube:
+          "https://www.youtube.com/@retemolchi"
+      },
+
+
+      /* ROMA EST */
+
+      {
+        nome: "Dopolavoro Mölkky",
+
+        luogo:
+          "Roma Est · Bocciofila Parco Sangalli",
+
+        quando:
+          "Mercoledì · ore 19:00",
+
+        lat: 41.87550,
+        lng: 12.54303,
+
+        instagram:
+          "https://www.instagram.com/dopolavoro_molkky/"
+      },
+
+
+      /* CITTÀ DI CASTELLO */
+
+      {
+        nome: "Tiferno Mölkky Team",
+
+        luogo:
+          "Città di Castello · PG",
+
+        lat: 43.4574,
+        lng: 12.2403,
+
+        instagram:
+          "https://www.instagram.com/tiferno_molkky_team/"
+      },
+
+
+      /* MATERA */
+
+      {
+        nome: "Mölkky e Fuggi",
+        luogo: "Matera",
+
+        lat: 40.6695,
+        lng: 16.6024,
+
+        instagram:
+          "https://www.instagram.com/molkkyefuggi/"
+      }
+
+    ];
+
+
+
+    /* ========================================
+       CREA MARKER
+    ========================================= */
+
+    realtaMolkky.forEach(
+      realta => {
+
+
+        let links = "";
+
+
+        if (realta.instagram) {
+
+          links += `
+
+            <a
+              href="${realta.instagram}"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+
+              <i class="bi bi-instagram"></i>
+
+              Instagram
+
+            </a>
+
+          `;
+
+        }
+
+
+        if (realta.facebook) {
+
+          links += `
+
+            <a
+              href="${realta.facebook}"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+
+              <i class="bi bi-facebook"></i>
+
+              Facebook
+
+            </a>
+
+          `;
+
+        }
+
+
+        if (realta.youtube) {
+
+          links += `
+
+            <a
+              href="${realta.youtube}"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+
+              <i class="bi bi-youtube"></i>
+
+              YouTube
+
+            </a>
+
+          `;
+
+        }
+
+
+
+        const quando =
+          realta.quando
+            ? `
+
+              <span class="popup-when">
+
+                <i class="bi bi-calendar3"></i>
+
+                ${realta.quando}
+
+              </span>
+
+            `
+            : "";
+
+
+
+        L.marker(
+          [realta.lat, realta.lng],
+          {
+            icon: molkkyIcon
+          }
+        )
+
+        .addTo(map)
+
+        .bindPopup(`
+
+          <div class="molkky-popup">
+
+            <strong>
+              ${realta.nome}
+            </strong>
+
+            <span class="popup-place">
+
+              <i class="bi bi-geo-alt-fill"></i>
+
+              ${realta.luogo}
+
+            </span>
+
+            ${quando}
+
+            <div class="popup-links">
+
+              ${links}
+
+            </div>
+
+          </div>
+
+        `);
+
+      }
+    );
+
+  </script>
+
+
+</body>
+
+</html>
