@@ -1860,6 +1860,18 @@ background-image: url('../img/bgstripes.png');
   max-width: 1000px;
 }
 
+.pdf-label{
+  background-color: white;
+  text-align: center;
+}
+
+.pdf-label span{
+  font-size: 30px;
+    display: inline;
+    color: var(--accent-color)
+
+}
+
   .pdf-thumb {
     width: 400px;
     cursor: pointer;
