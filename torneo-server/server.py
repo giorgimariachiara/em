@@ -106,7 +106,7 @@ class Handler(BaseHTTPRequestHandler):
                     secrets.SystemRandom().shuffle(names); codes=[]
                     for i,name in enumerate(names):
                         if len(name)>60: raise ValueError('Nome squadra troppo lungo')
-                        code=secrets.token_urlsafe(9); g=i%groups+1
+                        code=name; g=i%groups+1
                         c.execute('INSERT INTO teams(name,group_id,code) VALUES(?,?,?)',(name,g,digest(code))); codes.append(dict(name=name,code=code,group=g))
                     for g in range(1,groups+1):
                         for _ in range(per): c.execute('INSERT INTO courts(group_id) VALUES(?)',(g,))
