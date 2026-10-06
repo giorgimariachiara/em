@@ -4,7 +4,7 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 from pathlib import Path
 
 DB = os.environ.get('TORNEO_DB', 'torneo.db')
-ADMIN = os.environ.get('TORNEO_ADMIN_PASSWORD', '')
+ADMIN = os.environ.get('torneo', '')
 ORIGIN = os.environ.get('TORNEO_ORIGIN', 'http://localhost:8000')
 SESSIONS = {}
 
