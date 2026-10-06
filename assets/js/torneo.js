@@ -21,6 +21,13 @@ function resultForm(m){
 }
 function render(){
  const admin=state.team==='admin', me=state.teams.find(t=>t.id===state.team);
+ const assignmentClosed=!!state.settings.closed, assignmentPaused=!!state.settings.paused;
+ $('assignment-status').textContent=assignmentClosed?'Assegnazioni CHIUSE':assignmentPaused?'Assegnazioni IN PAUSA':'Assegnazioni APERTE';
+ $('assignment-status').className='alert '+(assignmentClosed?'alert-danger':assignmentPaused?'alert-warning':'alert-success');
+ $('assignment-help').textContent=assignmentClosed||assignmentPaused?'Non vengono assegnati nuovi incontri. Quelli già assegnati possono proseguire. Premi “Riprendi” per riaprire le assegnazioni.':'Le squadre disponibili possono ricevere nuovi incontri quando si libera un campo nel loro girone.';
+ document.querySelector('[data-control="pause"]').disabled=assignmentPaused||assignmentClosed;
+ document.querySelector('[data-control="resume"]').disabled=!assignmentPaused&&!assignmentClosed;
+ document.querySelector('[data-control="close"]').disabled=assignmentClosed;
  $('status').textContent=(state.settings.closed?'Nuove assegnazioni chiuse':state.settings.paused?'Torneo in pausa':'Torneo attivo')+' · Aggiornamento '+new Date().toLocaleTimeString('it-IT');
  $('login').hidden=!!state.team;$('account').hidden=!state.team;$('admin').hidden=!admin;$('team-controls').hidden=!me;
  $('identity').textContent=admin?'Accesso organizzatore':me?me.name+' · Girone '+me.group_id+' · '+(me.available?'Disponibile':'In pausa'):'';
