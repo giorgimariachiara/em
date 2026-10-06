@@ -92,3 +92,38 @@
     width: 100%;
   }
 }
+/* Pulsante di accesso coerente con il sito */
+.torneo-page #login button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  margin-top: 16px;
+  padding: 12px 28px;
+  border: 2px solid var(--accent-color, #9f1f33);
+  border-radius: 8px;
+  background: var(--accent-color, #9f1f33);
+  color: #fff;
+  font-family: "Blippo", sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.3;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.torneo-page #login button:hover {
+  background: #fff;
+  color: var(--accent-color, #9f1f33);
+}
+.torneo-page #login button:focus-visible {
+  outline: 3px solid #008c95;
+  outline-offset: 4px;
+}
+.torneo-page #login button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+@media (max-width: 767px) {
+  .torneo-page #login button {
+    width: 100%;
+  }
+}
