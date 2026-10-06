@@ -698,30 +698,98 @@ section,
 .section-title p {
   margin-bottom: 0;
 }
-
-
-.rules {
-  background-color: white;
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-  padding: 20px 20px;
-  margin-top: 200px;
-  width: 90%; /* così lasci spazio ai lati */
-
+.rules-page {
+  padding: 70px 20px;
+  background-image: url('../img/bgstripes.png');
+  background-size: contain;
+  background-repeat: repeat-y;
 }
 
-.rules .img1{
-  margin-top: 20px;
-  height: 280px;
-  width: auto;
-  
+.rules-card {
+  width: min(1200px, 100%);
+  margin: 0 auto;
+  padding: 55px;
+  background: white;
+  border-radius: 22px;
+  box-shadow: 0 5px 30px rgba(0,0,0,.12);
 }
 
-.rules .img2{
-  height: 200px;
-  width: auto;
-  margin-top: 20px;
-  
+.rules-card > h1 {
+  text-align: center;
+  margin: 0 0 50px;
+  color: rgb(0,140,149);
 }
+
+.rules-content {
+  display: grid;
+  grid-template-columns: 1.4fr .8fr;
+  gap: 55px;
+  align-items: start;
+}
+
+.rules-text p,
+.rules-text li,
+.rules-location p {
+  font-family: "Helvetica", sans-serif;
+  font-size: 19px;
+  line-height: 1.6;
+}
+
+.rules-text h2,
+.rules-location h2 {
+  color: #9f1f33;
+  margin: 30px 0 10px;
+}
+
+.rules-text ul {
+  padding-left: 25px;
+}
+
+.rules-text li {
+  margin-bottom: 15px;
+}
+
+.rules-images {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.rules-images img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.rules-location {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+  margin-top: 60px;
+  padding-top: 50px;
+  border-top: 2px solid #eee;
+}
+
+.rules-location iframe {
+  width: 100%;
+  height: 350px;
+  border: 0;
+  border-radius: 16px;
+}
+
+@media (max-width: 800px) {
+  .rules-card {
+    padding: 30px 22px;
+  }
+
+  .rules-content,
+  .rules-location {
+    grid-template-columns: 1fr;
+  }
+}
+
+
 
 #blippoTitle{
   font-family: "Blippo", sans-serif;
@@ -977,7 +1045,7 @@ background-image: url('../img/bgstripes.png');
   font-size: 22px;
   transition: ease-in-out 0.3s;
   background-color: transparent;  
-  color:var(--accent-color) ;
+  color:black ;
 }
 
 .services .service-item p {
@@ -985,7 +1053,14 @@ background-image: url('../img/bgstripes.png');
   font-size: 14px;
   margin-bottom: 0;
 }
+.services .service-item:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-color);
+  }
 
+  .services .service-item:hover h3 {
+color: var(--accent-color); 
+ }
 @media (min-width: 1365px) {
   .services .service-item:hover {
     transform: translateY(-10px);
@@ -993,7 +1068,7 @@ background-image: url('../img/bgstripes.png');
   }
 
   .services .service-item:hover h3 {
-color: black; 
+color: var(--accent-color); 
  }
 }
 
@@ -1801,8 +1876,14 @@ color: black;
 
 #blippoSec{
   font-family: "Blippo", sans-serif;
+  color: black;
 }
 
+#blippoSec2{
+  font-family: "Blippo", sans-serif;
+  font-size: 33px;
+  color: var(--accent-color);
+}
 
  #blippotitle{
   font-family: "Blippo", sans-serif;
@@ -1849,6 +1930,112 @@ background-image: url('../img/bgstripes.png');
   margin: auto;
 }
 
+/* ==================================
+   PDF POPUP
+================================== */
+
+.pdf-modal {
+  display: none;
+
+  position: fixed;
+  inset: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  background: rgba(0, 0, 0, 0.9);
+
+  z-index: 999999;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px;
+}
+
+
+.pdf-modal.active {
+  display: flex;
+}
+
+
+.pdf-modal-content {
+  position: relative;
+
+  width: 90vw;
+  height: 90vh;
+
+  max-width: 1400px;
+
+  margin: auto;
+
+  background: white;
+
+  border-radius: 16px;
+
+  overflow: hidden;
+
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.4);
+}
+
+
+.pdf-modal-content iframe {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  border: 0;
+}
+
+
+/* X CHIUSURA */
+
+.pdf-close-btn {
+  position: absolute;
+
+  top: 12px;
+  right: 12px;
+
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: white;
+  color: black;
+
+  font-size: 20px;
+
+  cursor: pointer;
+
+  z-index: 10;
+
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  .pdf-modal {
+    padding: 10px;
+  }
+
+  .pdf-modal-content {
+    width: 100%;
+    height: 90vh;
+  }
+
+}
 
 .pdf-gallery {
   display: flex;
@@ -1891,44 +2078,7 @@ background-image: url('../img/bgstripes.png');
   display: block;
 }
 
-/* Modal Styles */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.85);
-  justify-content: center;
-  align-items: center;
-}
 
-.modal-content {
-  width: 90%;
-  height: 90%;
-  background: white;
-  position: relative;
-}
-
-.modal iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-.close-btn {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 30px;
-  color: #fff;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  z-index: 10000;
-}
 
 
 .gallery-section {
@@ -2060,6 +2210,8 @@ background-image: url('../img/bgstripes.png');
 .photo-badge i {
   font-size: 14px;
 }
+
+
 
 /* INSTAGRAM MODAL */
 
@@ -2309,7 +2461,7 @@ background-color: white;
 
 
 .popup-links a:hover {
-  color: #9f1f33 !important;
+  color: var(--accent-color)!important;
 }
 
 
