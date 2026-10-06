@@ -2877,3 +2877,35 @@ background-color: white;
   }
 
 }
+/* About: paragrafi compatti e tipografia coerente con la Home */
+.about-page .rules-text,
+.about-page .rules-location-text {
+  min-width: 0;
+}
+.about-page .rules-text p,
+.about-page .rules-location-text p,
+.about-page .rules-text ul {
+  width: 100%;
+  max-width: 36rem;
+  margin-inline: auto;
+  font-family: "Helvetica", sans-serif;
+  font-size: 22px;
+  line-height: 1.5;
+}
+.about-page .rules-text p,
+.about-page .rules-location-text p {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.about-page .rules-text li {
+  font-size: inherit;
+  line-height: inherit;
+  text-align: left;
+}
+@media (max-width: 767px) {
+  .about-page .rules-text p,
+  .about-page .rules-location-text p,
+  .about-page .rules-text ul {
+    max-width: 100%;
+  }
+}
