@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Gazzettino Emiliano | L'Emiliana Mölkky</title>
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/logoum2.png" rel="icon">
+  <link href="assets/img/logoum2.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Vendor CSS -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+</head>
+
+
+<body class="newsHtml">
+
+
+  <!-- HEADER -->
+
+  <header id="header"
+          class="header d-flex align-items-center sticky-top">
+
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+
+      <a href="index.html"
+         class="logo d-flex align-items-center">
+
+        <img src="assets/img/logoem2.png"
+             alt="Emiliana Mölkky">
+
+      </a>
+
+
+      <nav id="navmenu" class="navmenu">
+
+        <ul>
+
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+
+          <li>
+            <a href="about.html">About</a>
+          </li>
+
+          <li>
+            <a href="events.html">Eventi</a>
+          </li>
+
+          <li>
+            <a href="news.html" class="active">
+              Gazzettino 
+            </a>
+          </li>
+          <li><a href="map.html">Mappa</a></li>
+          <li><a href="torneo.html">Torneo</a></li>
+        </ul>
+
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+
+      </nav>
+
+
+    </div>
+
+  </header>
+
+
+
+  <!-- MAIN -->
+
+  <main class="main">
+
+
+    <section id="news"
+             class="news section">
+
+
+      <!-- TITOLO -->
+
+      <div class="container section-title"
+           data-aos="fade-up">
+
+        <h2>NEWS</h2>
+
+      </div>
+
+
+
+      <!-- GALLERY -->
+
+      <div class="container">
+
+
+        <div class="pdf-gallery">
+
+
+          <!-- =========================
+               IV EDIZIONE
+               PIÙ RECENTE
+          ========================== -->
+
+          <div class="pdf-thumb"
+               data-pdf="assets/img/portfolio/gaz4.pdf"
+               data-aos="fade-up"
+               data-aos-delay="100">
+  <div class="pdf-label">
+             <span> IV EDIZIONE</span>
+            </div>
+            <img
+              src="assets/img/portfolio/mag4.png"
+              alt="Quarta Edizione del Gazzettino Emiliano"
+            >
+
+          
+
+          </div>
+
+
+
+          <!-- =========================
+               III EDIZIONE
+          ========================== -->
+
+          <div class="pdf-thumb"
+               data-pdf="assets/img/portfolio/gaz3.pdf"
+               data-aos="fade-up"
+               data-aos-delay="200">
+
+               <div class="pdf-label">
+              <span>III EDIZIONE</span> 
+            </div>
+            <img
+              src="assets/img/portfolio/mag3.png"
+              alt="Terza Edizione del Gazzettino Emiliano"
+            >
+
+           
+
+          </div>
+
+
+
+          <!-- =========================
+               II EDIZIONE
+          ========================== -->
+
+          <div class="pdf-thumb"
+               data-pdf="assets/img/portfolio/gaz2.pdf"
+               data-aos="fade-up"
+               data-aos-delay="300">
+            
+            <div class="pdf-label">
+              <span>
+              II EDIZIONE</span>
+            </div>
+
+            <img
+              src="assets/img/portfolio/mag2.png"
+              alt="Seconda Edizione del Gazzettino Emiliano"
+            >
+
+            
+
+          </div>
+
+
+
+          <!-- =========================
+               I EDIZIONE
+               PIÙ VECCHIA
+          ========================== -->
+
+          <div class="pdf-thumb"
+               data-pdf="assets/img/portfolio/gaz1.pdf"
+               data-aos="fade-up"
+               data-aos-delay="400">
+
+             <div class="pdf-label">
+              <span>
+              I EDIZIONE</span>
+            </div>
+            
+            <img
+              src="assets/img/portfolio/mag1.png"
+              alt="Prima Edizione del Gazzettino Emililiano"
+            >
+
+           
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+
+      <!-- =========================
+           MODALE PDF
+      ========================== -->
+
+     
+
+
+    </section>
+
+
+
+</main>
+
+
+<!-- PDF POPUP -->
+
+<div class="pdf-modal" id="pdfModal">
+
+  <div class="pdf-modal-content">
+
+    <button class="pdf-close-btn"
+            type="button"
+            onclick="closeModal()"
+            aria-label="Chiudi">
+
+      <i class="bi bi-x-lg"></i>
+
+    </button>
+
+    <iframe
+      id="pdfViewer"
+      src=""
+      title="Gazzettino Emiliano">
+    </iframe>
+
+  </div>
+
+</div>
+
+
+
+
+  <!-- FOOTER -->
+
+  <footer id="footer"
+          class="footer accent-background">
+
+    <div class="container">
+
+
+      <div class="copyright text-center">
+
+        <img
+          src="assets/img/footerem.png"
+          alt="Emiliana Mölkky"
+        >
+
+      </div>
+
+
+      <div class="social-links d-flex justify-content-center">
+
+        <a href="">
+          <i class="bi bi-twitter-x"></i>
+        </a>
+
+        <a href="">
+          <i class="bi bi-facebook"></i>
+        </a>
+
+        <a href="https://www.instagram.com/lemiliana_molkky/"
+           target="_blank"
+           rel="noopener noreferrer">
+
+          <i class="bi bi-instagram"></i>
+
+        </a>
+
+        <a href="">
+          <i class="bi bi-linkedin"></i>
+        </a>
+
+      </div>
+
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- SCROLL TOP -->
+
+  <a href="#"
+     id="scroll-top"
+     class="scroll-top d-flex align-items-center justify-content-center">
+
+    <i class="bi bi-arrow-up-short"></i>
+
+  </a>
+
+
+
+  <!-- PRELOADER -->
+
+  <div id="preloader"></div>
+
+
+
+  <!-- VENDOR JS -->
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+
+  <!-- MAIN JS -->
+
+  <script src="assets/js/main.js"></script>
+
+
+
+  <!-- PDF VIEWER -->
+
+  <script>
+
+    const thumbs =
+      document.querySelectorAll(".pdf-thumb");
+
+    const modal =
+      document.getElementById("pdfModal");
+
+    const pdfViewer =
+      document.getElementById("pdfViewer");
+
+
+    thumbs.forEach(thumb => {
+
+      thumb.addEventListener("click", () => {
+
+        const pdfSrc =
+          thumb.getAttribute("data-pdf");
+
+        pdfViewer.src =
+          encodeURI(pdfSrc) +
+          "#toolbar=0&navpanes=0";
+
+        modal.classList.add("active");
+
+        document.body.style.overflow = "hidden";
+
+      });
+
+    });
+
+
+
+    function closeModal() {
+
+      modal.classList.remove("active");
+
+      pdfViewer.src = "";
+
+      document.body.style.overflow = "";
+
+    }
+
+
+
+    modal.addEventListener("click", event => {
+
+      if (event.target === modal) {
+        closeModal();
+      }
+
+    });
+
+
+
+    window.addEventListener("keydown", event => {
+
+      if (event.key === "Escape") {
+        closeModal();
+      }
+
+    });
+
+  </script>
+
+
+</body>
+
+</html>
