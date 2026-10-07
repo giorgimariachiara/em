@@ -177,8 +177,9 @@
           </p>
 
           <p>
-            Clicca sui punti della mappa per scoprire chi gioca
-            nelle varie città.
+            Clicca sui punti della mappa per scoprire chi gioca.
+            Un numero indica quante realtà sono presenti nella stessa regione;
+            un pallino semplice indica una sola realtà.
           </p>
 
         </div>
@@ -747,6 +748,7 @@
 
       {
         nome: "L'Emiliana Mölkky",
+        regione: "Emilia-Romagna",
         luogo: "Bologna",
 
         lat: 44.4949,
@@ -764,6 +766,7 @@
 
       {
         nome: "Balera Mölkky",
+        regione: "Emilia-Romagna",
         luogo: "Ravenna",
 
         lat: 44.4184,
@@ -778,6 +781,7 @@
 
       {
         nome: "Adriatic Mölkky",
+        regione: "Marche",
         luogo: "Pesaro",
 
         lat: 43.9102,
@@ -792,6 +796,7 @@
 
       {
         nome: "Bello Molchi",
+        regione: "Lazio",
 
         luogo:
           "Roma · Piazza Albania",
@@ -814,6 +819,7 @@
 
       {
         nome: "Dopolavoro Mölkky",
+        regione: "Lazio",
 
         luogo:
           "Roma Est · Bocciofila Parco Sangalli",
@@ -833,6 +839,7 @@
 
       {
         nome: "Tiferno Mölkky Team",
+        regione: "Umbria",
 
         luogo:
           "Città di Castello · PG",
@@ -849,6 +856,7 @@
 
       {
         nome: "Mölkky e Fuggi",
+        regione: "Basilicata",
         luogo: "Matera",
 
         lat: 40.6695,
@@ -866,133 +874,47 @@
        CREA MARKER
     ========================================= */
 
-    realtaMolkky.forEach(
-      realta => {
 
+    function popupRealta(realta) {
+      const links = [["instagram", "Instagram"], ["facebook", "Facebook"], ["youtube", "YouTube"]]
+        .filter(([key]) => realta[key])
+        .map(([key, label]) => `<a href="${realta[key]}" target="_blank" rel="noopener noreferrer"><i class="bi bi-${key}"></i> ${label}</a>`)
+        .join("");
+      return `<div class="molkky-popup">
+        <strong>${realta.nome}</strong>
+        <span class="popup-place"><i class="bi bi-geo-alt-fill"></i> ${realta.luogo}</span>
+        ${realta.quando ? `<span class="popup-when"><i class="bi bi-calendar3"></i> ${realta.quando}</span>` : ""}
+        <div class="popup-links">${links}</div>
+      </div>`;
+    }
 
-        let links = "";
+    const realtaPerRegione = {};
+    realtaMolkky.forEach(realta => {
+      (realtaPerRegione[realta.regione] ||= []).push(realta);
+    });
 
+    Object.entries(realtaPerRegione).forEach(([regione, realta]) => {
+      const multiple = realta.length > 1;
+      const posizione = [
+        realta.reduce((sum, r) => sum + r.lat, 0) / realta.length,
+        realta.reduce((sum, r) => sum + r.lng, 0) / realta.length
+      ];
+      const icon = multiple ? L.divIcon({
+        className: "molkky-marker",
+        html: `<div class="molkky-marker-count">${realta.length}</div>`,
+        iconSize: [40, 40],
+        iconAnchor: [20, 20],
+        popupAnchor: [0, -18]
+      }) : molkkyIcon;
+      const popup = multiple
+        ? `<div class="molkky-region-popup"><h3>${regione} · ${realta.length} realtà</h3>${realta.map(popupRealta).join("")}</div>`
+        : popupRealta(realta[0]);
 
-        if (realta.instagram) {
-
-          links += `
-
-            <a
-              href="${realta.instagram}"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-
-              <i class="bi bi-instagram"></i>
-
-              Instagram
-
-            </a>
-
-          `;
-
-        }
-
-
-        if (realta.facebook) {
-
-          links += `
-
-            <a
-              href="${realta.facebook}"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-
-              <i class="bi bi-facebook"></i>
-
-              Facebook
-
-            </a>
-
-          `;
-
-        }
-
-
-        if (realta.youtube) {
-
-          links += `
-
-            <a
-              href="${realta.youtube}"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-
-              <i class="bi bi-youtube"></i>
-
-              YouTube
-
-            </a>
-
-          `;
-
-        }
-
-
-
-        const quando =
-          realta.quando
-            ? `
-
-              <span class="popup-when">
-
-                <i class="bi bi-calendar3"></i>
-
-                ${realta.quando}
-
-              </span>
-
-            `
-            : "";
-
-
-
-        L.marker(
-          [realta.lat, realta.lng],
-          {
-            icon: molkkyIcon
-          }
-        )
-
-        .addTo(map)
-
-        .bindPopup(`
-
-          <div class="molkky-popup">
-
-            <strong>
-              ${realta.nome}
-            </strong>
-
-            <span class="popup-place">
-
-              <i class="bi bi-geo-alt-fill"></i>
-
-              ${realta.luogo}
-
-            </span>
-
-            ${quando}
-
-            <div class="popup-links">
-
-              ${links}
-
-            </div>
-
-          </div>
-
-        `);
-
-      }
-    );
+      L.marker(posizione, {
+        icon,
+        title: multiple ? `${regione}: ${realta.length} realtà Mölkky` : realta[0].nome
+      }).addTo(map).bindPopup(popup, { maxWidth: 340, maxHeight: 380 });
+    });
 
   </script>
 
