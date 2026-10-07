@@ -150,5 +150,5 @@ class Handler(BaseHTTPRequestHandler):
             self.reply({'error':'Errore del server'},500)
 
 if __name__=='__main__':
-    if len(ADMIN)<12: raise SystemExit('Imposta TORNEO_ADMIN_PASSWORD con almeno 12 caratteri')
+    if not ADMIN: raise SystemExit('Imposta TORNEO_ADMIN_PASSWORD prima di avviare il server')
     init(); HTTPServer(('0.0.0.0',int(os.environ.get('PORT','8080'))),Handler).serve_forever()
