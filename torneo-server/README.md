@@ -21,7 +21,7 @@ Aprire `http://localhost:8000/torneo.html`, selezionare organizzatore e usare la
 
 GitHub Pages pubblica solo il frontend. Il backend richiede un processo Python sempre attivo, HTTPS tramite reverse proxy e un volume persistente per SQLite. Impostare:
 
-- `TORNEO_ADMIN_PASSWORD`: password privata di almeno 12 caratteri, come variabile del server.
+- `TORNEO_ADMIN_PASSWORD`: password privata non vuota, come variabile del server.
 - `TORNEO_ORIGIN`: origine esatta del sito (per GitHub Pages `https://giorgimariachiara.github.io`, senza `/em`).
 - `TORNEO_DB`: percorso del database su un disco persistente.
 - `PORT`: porta del processo, predefinita 8080.
