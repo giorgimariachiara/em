@@ -3075,3 +3075,15 @@ background-color: white;
     line-height: 1;
   }
 }
+
+/* Il colore globale dei link non deve nascondere le voci sul pannello bianco */
+@media (max-width: 1199px) {
+  .mobile-nav-active #navmenu > ul > li > a,
+  .mobile-nav-active #navmenu > ul > li > a:focus {
+    color: #17282b !important;
+  }
+  .mobile-nav-active #navmenu > ul > li > a.active,
+  .mobile-nav-active #navmenu > ul > li > a:hover {
+    color: #9f1f33 !important;
+  }
+}
