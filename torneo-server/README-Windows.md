@@ -121,7 +121,7 @@ Salvare. Da quel momento le **nuove** squadre usano il nome esatto, comprese mai
 
 ### 5.3 Password organizzatore
 
-La password viene impostata sul backend tramite `TORNEO_ADMIN_PASSWORD`; deve contenere almeno 12 caratteri. Non va inserita nell'HTML o nel JavaScript pubblico.
+La password viene impostata sul backend tramite `TORNEO_ADMIN_PASSWORD`; deve essere non vuota. Non va inserita nell'HTML o nel JavaScript pubblico.
 
 Nei comandi seguenti viene usata `ScegliUnaPassword!`: sostituirla con la password scelta e usare la stessa nella pagina. Le virgolette del comando non fanno parte della password.
 
@@ -445,7 +445,7 @@ Configurazione backend:
 
 | Variabile | Valore |
 | --- | --- |
-| `TORNEO_ADMIN_PASSWORD` | Password privata di almeno 12 caratteri |
+| `TORNEO_ADMIN_PASSWORD` | Password privata non vuota |
 | `TORNEO_ORIGIN` | Origine esatta del frontend, senza percorso |
 | `TORNEO_DB` | Percorso del database sul disco persistente |
 | `PORT` | Porta del servizio; predefinita 8080 |
