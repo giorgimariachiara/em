@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="assets/css/main.css">
 <link rel="stylesheet" href="assets/css/torneo.css">
 <script src="assets/js/torneo-config.js" defer></script><script src="assets/js/torneo.js" defer></script>
+<script src="assets/js/main.js" defer></script>
 </head>
 <body class="torneo-page">
 
@@ -21,50 +22,55 @@
       </a>
 
       <nav id="navmenu" class="navmenu">
-        
         <ul>
-          <li><a href="index.html" class="active">Home<br></a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="events.html">Eventi</a></li>
-          <li><a href="news.html">Gazzettino </a></li>
+          <li><a href="news.html">Gazzettino</a></li>
           <li><a href="map.html">Mappa</a></li>
-        </ul>
-           <li><a href="torneo.html">Torneo</a></li>
-
-
-          <!--
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
-            </ul>
-          </li>
-
-        -->
+          <li><a href="torneo.html" class="active" aria-current="page">Torneo</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
     </div>
   </header>
-  <main class="container t-main">
-    <p>Vuoi utilizzare questo sistema per il tuo torneo? Nel README trovi le istruzioni per configurarlo e avviarlo, creare le squadre e gestire incontri, risultati e classifica. Per far accedere i partecipanti dai propri dispositivi, segui anche le indicazioni per l’uso in rete o online.</p>
 
-<p class="mb-4 d-flex flex-wrap gap-2">
-  <a class="btn btn-outline-dark" href="https://github.com/giorgimariachiara/em/blob/main/torneo-server/README-Mac.md" target="_blank" rel="noopener noreferrer">Guida completa per Mac</a>
-  <a class="btn btn-outline-dark" href="https://github.com/giorgimariachiara/em/blob/main/torneo-server/README-Windows.md" target="_blank" rel="noopener noreferrer">Guida completa per Windows</a>
-</p>
+
+
+  
+  <main class="container t-main">
+<section class="torneo-guide">
+  <div class="torneo-guide-content">
+    <span class="torneo-guide-label">ORGANIZZA IL TUO TORNEO</span>
+    <h2>Vuoi usarlo anche tu?</h2>
+
+    <p>
+      Qui trovi tutto quello che serve per configurare il sistema,
+      creare le squadre e gestire incontri, risultati e classifica.
+      Scegli la guida per il tuo computer e segui i passaggi.
+    </p>
+  </div>
+
+  <div class="torneo-guide-links">
+    <a
+      href="https://github.com/giorgimariachiara/em/blob/main/torneo-server/README-Mac.md"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Guida per Mac
+    </a>
+
+    <a
+      href="https://github.com/giorgimariachiara/em/blob/main/torneo-server/README-Windows.md"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Guida per Windows
+    </a>
+  </div>
+</section>
+
 <div class="t-title"><h1>Il torneo</h1><button id="refresh" type="button">Aggiorna</button></div>
 <p id="status" role="status" aria-live="polite">Connessione al torneo…</p><p id="error" role="alert" hidden></p>
 <div class="t-grid">

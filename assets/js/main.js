@@ -15,6 +15,7 @@
   function toggleScrolled() {
     const selectBody = document.querySelector('body');
     const selectHeader = document.querySelector('#header');
+    if (!selectHeader) return;
     if (!selectHeader.classList.contains('scroll-up-sticky') && !selectHeader.classList.contains('sticky-top') && !selectHeader.classList.contains('fixed-top')) return;
     window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
   }
@@ -31,8 +32,25 @@
     document.querySelector('body').classList.toggle('mobile-nav-active');
     mobileNavToggleBtn.classList.toggle('bi-list');
     mobileNavToggleBtn.classList.toggle('bi-x');
+    mobileNavToggleBtn.setAttribute('aria-expanded', document.body.classList.contains('mobile-nav-active'));
+    mobileNavToggleBtn.setAttribute('aria-label', document.body.classList.contains('mobile-nav-active') ? 'Chiudi menu' : 'Apri menu');
   }
-  mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
+  if (mobileNavToggleBtn) {
+    mobileNavToggleBtn.setAttribute('role', 'button');
+    mobileNavToggleBtn.setAttribute('tabindex', '0');
+    mobileNavToggleBtn.setAttribute('aria-label', 'Apri menu');
+    mobileNavToggleBtn.setAttribute('aria-expanded', 'false');
+    mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
+    mobileNavToggleBtn.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        mobileNavToogle();
+      }
+    });
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && document.body.classList.contains('mobile-nav-active')) mobileNavToogle();
+    });
+  }
 
   /**
    * Hide mobile nav on same-page/hash links
@@ -63,9 +81,11 @@
    */
   const preloader = document.querySelector('#preloader');
   if (preloader) {
-    window.addEventListener('load', () => {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => preloader.remove(), { once: true });
+    } else {
       preloader.remove();
-    });
+    }
   }
 
   /**
@@ -78,7 +98,7 @@
       window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
     }
   }
-  scrollTop.addEventListener('click', (e) => {
+  if (scrollTop) scrollTop.addEventListener('click', (e) => {
     e.preventDefault();
     window.scrollTo({
       top: 0,
@@ -93,6 +113,7 @@
    * Animation on scroll function and init
    */
   function aosInit() {
+    if (typeof AOS === 'undefined') return;
     AOS.init({
       duration: 600,
       easing: 'ease-in-out',
@@ -100,13 +121,17 @@
       mirror: false
     });
   }
-  window.addEventListener('load', aosInit);
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', aosInit, { once: true });
+  } else {
+    aosInit();
+  }
 
   /**
    * Init typed.js
    */
   const selectTyped = document.querySelector('.typed');
-  if (selectTyped) {
+  if (selectTyped && typeof Typed !== 'undefined') {
     let typed_strings = selectTyped.getAttribute('data-typed-items');
     typed_strings = typed_strings.split(',');
     new Typed('.typed', {
@@ -123,6 +148,7 @@
    */
   let skillsAnimation = document.querySelectorAll('.skills-animation');
   skillsAnimation.forEach((item) => {
+    if (typeof Waypoint === 'undefined' || !item.querySelector('.progress')) return;
     new Waypoint({
       element: item,
       offset: '80%',
@@ -138,19 +164,20 @@
   /**
    * Initiate Pure Counter
    */
-  new PureCounter();
+  if (typeof PureCounter !== 'undefined' && document.querySelector('.purecounter')) new PureCounter();
 
   /**
    * Initiate glightbox
    */
-  const glightbox = GLightbox({
-    selector: '.glightbox'
-  });
+  if (typeof GLightbox !== 'undefined' && document.querySelector('.glightbox')) {
+    GLightbox({ selector: '.glightbox' });
+  }
 
   /**
    * Init isotope layout and filters
    */
   document.querySelectorAll('.isotope-layout').forEach(function(isotopeItem) {
+    if (typeof imagesLoaded === 'undefined' || typeof Isotope === 'undefined') return;
     let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
     let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
     let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
@@ -193,6 +220,7 @@
    * Init swiper sliders
    */
   function initSwiper() {
+    if (typeof Swiper === 'undefined') return;
     document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
       let config = JSON.parse(
         swiperElement.querySelector(".swiper-config").innerHTML.trim()
@@ -248,54 +276,5 @@
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 })();
-
-
-window.addEventListener('DOMContentLoaded', () => {
-  const container = document.getElementById('mollky-canvas');
-  const width = container.clientWidth;
-  const height = container.clientHeight;
-
-  // Setup scena, camera e renderer
-  const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
-  camera.position.z = 5;
-
-  const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-  renderer.setSize(width, height);
-  renderer.setClearColor(0x000000, 0); // sfondo trasparente
-  container.appendChild(renderer.domElement);
-
-  // Carica la texture PNG del birillo
-  const textureLoader = new THREE.TextureLoader();
-  textureLoader.load('assets/img/mollky12.png', (texture) => {
-    // Piano con la texture del birillo
-    no
-
-    // Funzione chiamata al tocco del logo
-    function onBirilloHit() {
-      const logo = document.getElementById('main-logo');
-      if (logo) {
-        logo.style.transition = 'transform 0.5s ease';
-        logo.style.transform = 'scale(1.2)';
-      }
-
-      const menu = document.getElementById('menu');
-      if (menu) {
-        menu.style.transition = 'opacity 0.5s ease';
-        menu.style.opacity = '1';
-        menu.style.pointerEvents = 'auto';
-      }
-    }
-  });
-
-  // Aggiorna renderer e camera al resize finestra
-  window.addEventListener('resize', () => {
-    const width = container.clientWidth;
-    const height = container.clientHeight;
-    renderer.setSize(width, height);
-    camera.aspect = width / height;
-    camera.updateProjectionMatrix();
-  });
-});
 
 
