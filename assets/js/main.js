@@ -32,8 +32,25 @@
     document.querySelector('body').classList.toggle('mobile-nav-active');
     mobileNavToggleBtn.classList.toggle('bi-list');
     mobileNavToggleBtn.classList.toggle('bi-x');
+    mobileNavToggleBtn.setAttribute('aria-expanded', document.body.classList.contains('mobile-nav-active'));
+    mobileNavToggleBtn.setAttribute('aria-label', document.body.classList.contains('mobile-nav-active') ? 'Chiudi menu' : 'Apri menu');
   }
-  if (mobileNavToggleBtn) mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
+  if (mobileNavToggleBtn) {
+    mobileNavToggleBtn.setAttribute('role', 'button');
+    mobileNavToggleBtn.setAttribute('tabindex', '0');
+    mobileNavToggleBtn.setAttribute('aria-label', 'Apri menu');
+    mobileNavToggleBtn.setAttribute('aria-expanded', 'false');
+    mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
+    mobileNavToggleBtn.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        mobileNavToogle();
+      }
+    });
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && document.body.classList.contains('mobile-nav-active')) mobileNavToogle();
+    });
+  }
 
   /**
    * Hide mobile nav on same-page/hash links
