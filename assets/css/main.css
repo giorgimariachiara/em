@@ -3046,3 +3046,32 @@ background-color: white;
 @media (max-width: 380px) {
   .gallery-grid { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* Menu mobile: evitare il ritaglio causato dall'header */
+@media (max-width: 1199px) {
+  .header { overflow: visible; }
+  .mobile-nav-active .header { z-index: 10000; }
+  .mobile-nav-active .navmenu {
+    position: fixed;
+    inset: 0;
+    overflow: visible;
+    height: 100dvh;
+    z-index: 10001;
+  }
+  .mobile-nav-active .navmenu > ul {
+    display: block;
+    position: fixed;
+    inset: 76px 16px 20px;
+    max-height: none;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 12px 0;
+  }
+  .mobile-nav-active .mobile-nav-toggle {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 10002;
+    line-height: 1;
+  }
+}
