@@ -217,6 +217,18 @@
         <div class="map-info-grid">
 
 
+
+          <!-- BERGAMO -->
+          <div class="map-info-card" data-aos="fade-up">
+            <span class="map-city">BERGAMO · LOMBARDIA</span>
+            <h3>Orobica Mölkky</h3>
+            <p class="map-meeting"><i class="bi bi-geo-alt-fill"></i><span>CTE Monterosso<br>Via Leonardo Da Vinci, 9<br>24123 Bergamo BG</span></p>
+            <div class="map-card-links">
+              <a href="https://www.instagram.com/orobica_molkky/" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram"></i> Instagram</a>
+              <a href="https://www.google.com/maps/search/?api=1&amp;query=CTE%20Monterosso%20Via%20Leonardo%20Da%20Vinci%209%20Bergamo" target="_blank" rel="noopener noreferrer"><i class="bi bi-geo-alt"></i> Indicazioni</a>
+            </div>
+          </div>
+
           <!-- BOLOGNA -->
 
           <div
@@ -742,6 +754,16 @@
     ========================================= */
 
     const realtaMolkky = [
+      {
+        nome: "Orobica Mölkky",
+        regione: "Lombardia",
+        luogo: "Bergamo · CTE Monterosso · Via Leonardo Da Vinci, 9, 24123 Bergamo BG",
+        // Posizione indicativa della città; il link apre la ricerca della sede esatta.
+        lat: 45.6983,
+        lng: 9.6773,
+        instagram: "https://www.instagram.com/orobica_molkky/",
+        mappa: "https://www.google.com/maps/search/?api=1&query=CTE%20Monterosso%20Via%20Leonardo%20Da%20Vinci%209%20Bergamo"
+      },
 
 
       /* BOLOGNA */
@@ -876,9 +898,9 @@
 
 
     function popupRealta(realta) {
-      const links = [["instagram", "Instagram"], ["facebook", "Facebook"], ["youtube", "YouTube"]]
+      const links = [["instagram", "Instagram"], ["facebook", "Facebook"], ["youtube", "YouTube"], ["mappa", "Indicazioni"]]
         .filter(([key]) => realta[key])
-        .map(([key, label]) => `<a href="${realta[key]}" target="_blank" rel="noopener noreferrer"><i class="bi bi-${key}"></i> ${label}</a>`)
+        .map(([key, label]) => `<a href="${realta[key]}" target="_blank" rel="noopener noreferrer"><i class="bi bi-${key === "mappa" ? "geo-alt" : key}"></i> ${label}</a>`)
         .join("");
       return `<div class="molkky-popup">
         <strong>${realta.nome}</strong>
